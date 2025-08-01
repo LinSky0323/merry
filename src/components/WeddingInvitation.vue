@@ -59,9 +59,8 @@
     { id: 1, url: '/images/S__13434885.jpg' },
     { id: 2, url: '/images/S__13434886.jpg' },
     { id: 3, url: '/images/S__13434887.jpg' },
-    { id: 4, url: '/images/S__13434888.jpg' },
-    { id: 5, url: '/images/S__13434889.jpg' },
-    { id: 6, url: '/images/S__13434890.jpg' }
+    { id: 4, url: '/images/S__13434889.jpg' },
+    { id: 5, url: '/images/S__13434890.jpg' }
   ]);
   // 停車資訊
   const parkurl = ref('/images/park.webp')
