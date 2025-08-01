@@ -1,17 +1,60 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="zh-Hant">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title><%= htmlWebpackPlugin.options.title %></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>誠摯邀請您參加我們的婚禮</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- 在這裡定義我們的自訂字體 -->
+    <style>
+      @font-face {
+        font-family: "BlackRose"; /* 給字體命名 */
+        src: url("/font/PopGothicCjkTc-Regular.ttf") format("truetype"); /* 從 public 資料夾載入 */
+        font-display: swap;
+      }
+      /* --- Grid-Slide 動畫 --- */
+
+      /* 1. 設定 Grid 容器的基礎樣式 */
+      .grid-container {
+        display: grid;
+        margin-top: 20px;
+        /*
+        關鍵！grid-template-rows 的變化是可以被 transition 的！
+        我們將在這裡控制行高。
+      */
+        transition: grid-template-rows 0.5s ease-in-out,
+          opacity 0.5s ease-in-out;
+      }
+
+      /* 2. 定義進入動畫的起始狀態 和 離開動畫的結束狀態 */
+      .grid-slide-enter-from,
+      .grid-slide-leave-to {
+        /*
+        將網格的行高設為 0fr (0 fraction)，即高度為 0
+      */
+        grid-template-rows: 0fr;
+        opacity: 0;
+      }
+
+      /* 3. 定義進入動畫的結束狀態 和 離開動畫的起始狀態 */
+      .grid-slide-enter-to,
+      .grid-slide-leave-from {
+        /*
+        將網格的行高設為 1fr，它會自動擴展到內容所需的高度
+      */
+        grid-template-rows: 1fr;
+        opacity: 1;
+      }
+    </style>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
   </head>
-  <body>
-    <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
+  <body class="bg-gray-100">
     <div id="app"></div>
-    <!-- built files will be auto injected -->
   </body>
 </html>
